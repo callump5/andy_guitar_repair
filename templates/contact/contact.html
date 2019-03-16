@@ -2,4 +2,41 @@
 
     <h1 class="title">Contact</h1>
 
+    <div id="call-form" class="page">
+        <div class="container">
+            <form method="post">
+                <div class="row">
+                    {% csrf_token %}
+                </div>
+                <input id="callform-submit" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $('#div_id_name').addClass('wrap-1');
+        $('#div_id_number').addClass('wrap-1');
+        $('#div_id_email').addClass('wrap-1');
+        $('#div_id_booking_time').addClass('wrap-2');
+        $('#div_id_day').addClass('wrap-2');
+        $('#callform-submit').addClass('wrap-2');
+        $('#call-form .alert').addClass('wrap-3');
+
+
+        $('.wrap-1').wrapAll('<div class=col-md-6>');
+        $('.wrap-2').wrapAll('<div class=col-md-6>');
+        $('.wrap-3').wrapAll('<div class=col-md-12>');
+
+        $('#id_day').css('position', 'relative');
+
+        $( function() {
+            $( "#id_day" ).datepicker({
+                showOn: "button",
+                buttonImage: "/static/icons/edit.png",
+                buttonImageOnly: true,
+                buttonText: "Select date"
+            });
+        });
+  </script>
+
 </section>

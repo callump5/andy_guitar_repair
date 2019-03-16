@@ -28,3 +28,18 @@ class Testimonials(models.Model):
     class Meta:
         verbose_name = 'Testimonial'
         verbose_name_plural = 'Testimonials'
+
+class ContactRequest(models.Model):
+
+    name = models.CharField(max_length=100)
+    number = models.CharField(max_length=100)
+    email = models.EmailField()
+    description = models.TextField()
+
+    def __unicode__(self):
+        return self.client
+
+    class Meta:
+        verbose_name = 'Contact Request'
+        verbose_name_plural = 'Contact Request'
+

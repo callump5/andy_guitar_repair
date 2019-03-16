@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'andy_site'
+    'andy_site',
+    'django_forms_bootstrap',
 ]
 
 MIDDLEWARE = [

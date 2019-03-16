@@ -21,7 +21,7 @@
 
     font-size: 20px;
     font-family: 'Lato', sans-serif;
-    font-weight: lighter;
+    font-weight: bold;
     color: #5c5c5c;
     list-style: none;
     text-decoration: none;
@@ -175,5 +175,6 @@ section {
 }
 
 .client {
-    font-weight: bold;
+    font-weight: 100;
+
 }
