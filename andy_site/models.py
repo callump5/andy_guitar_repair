@@ -16,4 +16,15 @@ class Service(models.Model):
 
     class Meta:
         verbose_name = 'Service'
-        verbose_name_plural = ' Services'
+        verbose_name_plural = 'Services'
+
+class Testimonials(models.Model):
+    client = models.CharField(max_length=200)
+    testimonial = models.TextField()
+
+    def __unicode__(self):
+        return self.client
+
+    class Meta:
+        verbose_name = 'Testimonial'
+        verbose_name_plural = 'Testimonials'

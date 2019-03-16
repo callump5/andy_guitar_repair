@@ -29,10 +29,13 @@
 
 body {
     line-height: 1.4;
-    padding: 5px 30px 5px 30px;
+}
+#navbar {
+    padding: 10px 30px;
 }
 section {
-    padding: 30px 0;
+    padding: 10px 0 30px 0;
+    margin: 0 30px;
 }
 
 
@@ -47,7 +50,6 @@ section {
 /* Header */
 
 #navbar {
-    padding: 10px 0;
 }
 
 #nav-body, .my-nav-flex, #nav-links {
@@ -91,10 +93,9 @@ section {
 }
 
 
-/* Landing */
+/* Landing and Img break */
 
-#landing {
-    background-image: linear-gradient(to left, rgba(46, 76, 255, 0.7), rgba(51, 194, 255, 0.7)) , url("/static/4k-wallpaper-blur-close-up-1266821.jpg");
+#landing, #img-break {
     background-size: cover;
     height: 80vh;
     display: flex;
@@ -102,10 +103,17 @@ section {
     align-items: center;
     text-align: center;
 }
-#landing-text {
+
+#landing {
+    background-image: linear-gradient(to left, rgba(46, 76, 255, 0.7), rgba(87, 109, 230, 0.7)) , url("/static/4k-wallpaper-blur-close-up-1266821.jpg");
+}
+#img-break {
+    background-image: linear-gradient(to left, rgba(255, 144, 46, 0.7), rgba(230, 154, 87, 0.7)) , url("/static/4k-wallpaper-blur-close-up-1266821.jpg");
+}
+#landing-text, #img-break-text {
     width: 70%;
 }
-#landing-text p {
+#landing-text p, #img-break-text p {
     font-size: 35px;
     color: white;
     font-weight: bolder;
@@ -116,12 +124,16 @@ section {
 
 /* Service */
 
+#services {
+    border-bottom: 1px solid gray;
+}
+
 .services-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-/
+    align-items: center;
 }
 
 .service {
@@ -139,7 +151,7 @@ section {
     margin-left: 0;
 }
 .service:last-child {
-margin-right:  0;
+    margin-right:  0;
 }
 
 .service-img {
@@ -152,4 +164,16 @@ margin-right:  0;
     background-color: rgba(202, 202, 202, 0.5);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+/* Testimonials */
+
+#testimonials {
+}
+.testimonials {
+    margin: 10px;
+}
+
+.client {
+    font-weight: bold;
 }
