@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+
+{% block base %}
+
+    {% include 'base/header.html' %}
+
+    {% include 'home/landing.html'%}
+
+    {%  include 'services/services.html' %}
+
+    {% block content %}
+    
+    {% endblock %}
+    
+{% endblock %}
+
