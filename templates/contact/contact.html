@@ -1,3 +1,4 @@
+{% load crispy_forms_tags %}
 <section id="contact">
 
     <h1 class="title">Contact</h1>
@@ -7,36 +8,28 @@
             <form method="post">
                 <div class="row">
                     {% csrf_token %}
+                    {{ form|crispy }}
                 </div>
-                <input id="callform-submit" type="submit" value="Submit">
+                <input id="contactform-submit" type="submit" value="Submit">
             </form>
         </div>
     </div>
 
     <script>
-        $('#div_id_name').addClass('wrap-1');
+        $('#id_client').addClass('form-control');
+        $('#id_number').addClass('form-control');
+        $('#id_email').addClass('form-control');
+        $('#id_description').addClass('form-control').css('height', '200px');
+
+        $('#div_id_client').addClass('wrap-1');
         $('#div_id_number').addClass('wrap-1');
         $('#div_id_email').addClass('wrap-1');
-        $('#div_id_booking_time').addClass('wrap-2');
-        $('#div_id_day').addClass('wrap-2');
-        $('#callform-submit').addClass('wrap-2');
-        $('#call-form .alert').addClass('wrap-3');
+        $('#contactform-submit').addClass('wrap-1');
+        $('#div_id_description').addClass('wrap-2');
 
+        $('.wrap-1').wrapAll('<div class=col-1>');
+        $('.wrap-2').wrapAll('<div class=col-1>');
+        $('.wrap-3').wrapAll('<div class=col-2>');
 
-        $('.wrap-1').wrapAll('<div class=col-md-6>');
-        $('.wrap-2').wrapAll('<div class=col-md-6>');
-        $('.wrap-3').wrapAll('<div class=col-md-12>');
-
-        $('#id_day').css('position', 'relative');
-
-        $( function() {
-            $( "#id_day" ).datepicker({
-                showOn: "button",
-                buttonImage: "/static/icons/edit.png",
-                buttonImageOnly: true,
-                buttonText: "Select date"
-            });
-        });
   </script>
-
 </section>

@@ -13,15 +13,19 @@ def get_landing(request):
     services = Service.objects.all()
     testimonials = Testimonials.objects.all()
 
+    if request.method == 'POST':
+        contact_form = ContactRequestForm(request.POST)
+        if contact_form.is_valid():
+            contact_form.save()
+            return redirect('home')
+        else:
+             contact_form = ContactRequestForm()
+    else:
+        contact_form = ContactRequestForm
     args = {
         'services': services,
-        'testimonials': testimonials
+        'testimonials': testimonials,
+        'form': contact_form
     }
-
-    if request.method == 'POST':
-        form = ContactRequestForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return render(request, 'base/base.html')
 
     return render(request, 'base/base.html', args)

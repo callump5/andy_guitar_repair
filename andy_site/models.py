@@ -31,7 +31,7 @@ class Testimonials(models.Model):
 
 class ContactRequest(models.Model):
 
-    name = models.CharField(max_length=100)
+    client = models.CharField(max_length=100)
     number = models.CharField(max_length=100)
     email = models.EmailField()
     description = models.TextField()
