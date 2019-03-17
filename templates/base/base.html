@@ -7,17 +7,13 @@
 
     {% include 'home/landing.html'%}
 
-    {%  include 'services/services.html' %}
-
-    {%  include 'testimonials/testimonials.html' %}
+    {% block content %}
+    
+    {% endblock %}
 
     {%  include 'home/img_break.html' %}
 
     {% include 'contact/contact.html' %}
-
-    {% block content %}
-    
-    {% endblock %}
     
 {% endblock %}
 

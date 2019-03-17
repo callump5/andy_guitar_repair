@@ -1,0 +1,19 @@
+<article class="jobpost">
+
+    <h2 class="jobpost-title">{{ job_post }}</h2>
+
+    <div class="jobpost-content">
+
+        <div class="jobpost-text">
+            <p class="jobpost-desc blog-text">{{ job_post.description }}</p>
+
+            <div class="jobpost-testimonial">
+                <h2>What They Said...</h2>
+                <p class="blog-text">{{ job_post.job_post_testimonial.first.testimonial }}</p>
+                <p class="client">{{ job_post.job_post_testimonial.first.client }}</p>
+            </div>
+        </div>
+
+        <img class="jobpost-img" src="{{ job_post.image.url }}">
+    </div>
+</article>

@@ -18,7 +18,26 @@ class Service(models.Model):
         verbose_name = 'Service'
         verbose_name_plural = 'Services'
 
+
+class JobBlogPost(models.Model):
+    title = models.CharField(max_length=300)
+    service = models.ForeignKey(Service, related_name='job_post_service')
+    description = models.TextField()
+    image = models.ImageField(upload_to='uploads/images/jobposts')
+
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Job Blog Post'
+        verbose_name_plural = 'Job Blog Posts'
+
+
+
+
 class Testimonials(models.Model):
+    job = models.ForeignKey(JobBlogPost, related_name='job_post_testimonial')
     client = models.CharField(max_length=200)
     testimonial = models.TextField()
 
@@ -28,6 +47,8 @@ class Testimonials(models.Model):
     class Meta:
         verbose_name = 'Testimonial'
         verbose_name_plural = 'Testimonials'
+
+
 
 class ContactRequest(models.Model):
 

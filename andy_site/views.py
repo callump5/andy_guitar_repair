@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
 
-from .models import Service, Testimonials
+from .models import Service, Testimonials, JobBlogPost
 from .forms import ContactRequestForm
 
 # Create your views here.
@@ -28,4 +28,32 @@ def get_landing(request):
         'form': contact_form
     }
 
-    return render(request, 'base/base.html', args)
+    return render(request, 'home/home_page.html', args)
+
+
+def get_services(request):
+
+    services = Service.objects.all()
+    job_posts = JobBlogPost.objects.all()
+    testimonials = Testimonials.objects.all()
+
+    timonials = Testimonials.objects.all()
+
+    if request.method == 'POST':
+        contact_form = ContactRequestForm(request.POST)
+        if contact_form.is_valid():
+            contact_form.save()
+            return redirect('services')
+        else:
+            contact_form = ContactRequestForm()
+    else:
+        contact_form = ContactRequestForm
+
+    args = {
+        'services': services,
+        'job_posts': job_posts,
+        'testimonials': testimonials,
+        'form': contact_form
+    }
+
+    return render(request, 'services/service-page.html', args)

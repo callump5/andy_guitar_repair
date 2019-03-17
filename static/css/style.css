@@ -27,6 +27,10 @@
     text-decoration: none;
 }
 
+h2 {
+    font-size: 22px;
+}
+
 body {
     line-height: 1.4;
 }
@@ -90,8 +94,7 @@ section {
 }
 .nav-icon {
     height: 30px;
-    width: 30px;
-    margin-right: 5px;
+    width: 30px
 }
 .social-link {
     display: flex;
@@ -193,7 +196,7 @@ section {
 }
 .col-1{
     width: 50%;
-    padding: 30px;
+    padding: 0 30px;
 }
 
 #contactform-submit {
@@ -220,4 +223,43 @@ section {
     transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+
+/* Service Page */
+
+#jobposts {
+    margin-top: 10px;
+}
+
+
+.jobpost {
+    margin-bottom: 10px;
+}
+
+.jobpost-content {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+}
+
+.jobpost-img {
+    height: 150px;
+    width: auto;
+    margin-left: 10px;
+}
+.jobpost-title {
+    font-size: 1.5em;
+}
+
+.jobpost-testimonial {
+    margin-top: 5px;
+}
+
+.blog-text {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
 }
