@@ -35,9 +35,8 @@ def get_services(request):
 
     services = Service.objects.all()
     job_posts = JobBlogPost.objects.all()
-    testimonials = Testimonials.objects.all()
 
-    timonials = Testimonials.objects.all()
+    testimonials = Testimonials.objects.all()
 
     if request.method == 'POST':
         contact_form = ContactRequestForm(request.POST)
@@ -54,6 +53,19 @@ def get_services(request):
         'job_posts': job_posts,
         'testimonials': testimonials,
         'form': contact_form
+    }
+
+    return render(request, 'services/services-page.html', args)
+
+
+def get_service(request, service_id):
+
+    service = Service.objects.get(pk=service_id)
+    jobs = JobBlogPost.objects.filter(service_id=service_id)
+
+    args = {
+        'service': service,
+        'jobs': jobs
     }
 
     return render(request, 'services/service-page.html', args)

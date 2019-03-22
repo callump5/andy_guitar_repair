@@ -1,10 +1,17 @@
 {% extends 'base/base.html' %}
 
     {% block content %}
-        {%  include 'services/services.html' %}
-        <section id="jobposts">
-            {% for job_post in job_posts %}
-                {% include 'services/job-post.html' %}
-            {% endfor %}
+        <section id="service">
+            <div class="service-titles">
+                <h1 class="title">{{ service }}</h1><h2> - {{service.price }}</h2>
+            </div>
+            <p>{{ service.description }}</p>
         </section>
+
+
+        {% for job in jobs %}
+            <div class="service-img" style="background-image: url( {{ job.image1.url }} )"></div>
+        {% endfor %}
+
     {% endblock %}
+

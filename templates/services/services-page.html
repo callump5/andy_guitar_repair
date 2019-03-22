@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %}
+
+    {% block content %}
+        {%  include 'services/services.html' %}
+        <section id="jobposts">
+            <h1 class="title">Recent Projects</h1>
+            {% for job_post in job_posts %}
+                {% include 'services/job-post.html' %}
+            {% endfor %}
+        </section>
+    {% endblock %}

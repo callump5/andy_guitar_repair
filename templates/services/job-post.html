@@ -7,13 +7,15 @@
         <div class="jobpost-text">
             <p class="jobpost-desc blog-text">{{ job_post.description }}</p>
 
-            <div class="jobpost-testimonial">
-                <h2>What They Said...</h2>
-                <p class="blog-text">{{ job_post.job_post_testimonial.first.testimonial }}</p>
-                <p class="client">{{ job_post.job_post_testimonial.first.client }}</p>
-            </div>
+            {% if job_post.job_post_testimonial.first.testimonial %}
+                <div class="jobpost-testimonial">
+                    <h2>What They Said...</h2>
+                    <p class="blog-text">{{ job_post.job_post_testimonial.first.testimonial }}</p>
+                    <p class="client"> - {{ job_post.job_post_testimonial.first.client }}</p>
+                </div>
+            {% endif %}
         </div>
 
-        <img class="jobpost-img" src="{{ job_post.image.url }}">
+        <img class="jobpost-img" src="{{ job_post.image1.url }}">
     </div>
 </article>

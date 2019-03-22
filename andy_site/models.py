@@ -10,6 +10,7 @@ class Service(models.Model):
     service = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(upload_to='uploads/images/services')
+    price =  models.DecimalField(max_digits=6, decimal_places=2)
 
     def __unicode__(self):
         return self.service
@@ -23,7 +24,9 @@ class JobBlogPost(models.Model):
     title = models.CharField(max_length=300)
     service = models.ForeignKey(Service, related_name='job_post_service')
     description = models.TextField()
-    image = models.ImageField(upload_to='uploads/images/jobposts')
+    image1 = models.ImageField(upload_to='uploads/images/jobposts')
+    image2 = models.ImageField(upload_to='uploads/images/jobposts', blank=True, null=True)
+    image3 = models.ImageField(upload_to='uploads/images/jobposts', blank=True, null=True)
 
 
     def __unicode__(self):
