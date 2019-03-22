@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <section id="project">
+
+        <h1 class="title">Project</h1>
+
+        {% include 'projects/job-post.html' %}
+
+
+    <div class="project-imgs">
+
+        <img class="jobpost-img" src="{{ job_post.image1.url }}">
+        <img class="jobpost-img" src="{{ job_post.image2.url }}">
+        <img class="jobpost-img" src="{{ job_post.image3.url }}">
+
+    </div>
+
+        <script type="text/javascript">
+            $('#job-img').css('display', 'none')
+        </script>
+
+    </section>
+
+{% endblock %}
+

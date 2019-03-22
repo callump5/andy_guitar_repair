@@ -1,0 +1,15 @@
+
+
+    <div class="jobs-gallery">
+        {% for job in jobs %}
+            <a href="{% url 'project' job.pk %}"><img class="jobs-gallery-img" src="{{ job.image1.url }} "></a>
+
+            {% if job.image2 %}
+                <a  href="{% url 'project' job.pk %}"><img class="jobs-gallery-img" src="{{ job.image2.url }} "></a>
+            {% endif %}
+
+            {% if job.image3 %}
+                <a  href="{% url 'project' job.pk %}"><img class="jobs-gallery-img" src="{{ job.image3.url }} "></a>
+            {% endif %}
+        {% endfor %}
+    </div>

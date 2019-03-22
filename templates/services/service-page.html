@@ -2,16 +2,14 @@
 
     {% block content %}
         <section id="service">
+
             <div class="service-titles">
                 <h1 class="title">{{ service }}</h1><h2> - {{service.price }}</h2>
             </div>
+
             <p>{{ service.description }}</p>
+
+        {% include 'services/../projects/job-gallery.html' %}
         </section>
-
-
-        {% for job in jobs %}
-            <div class="service-img" style="background-image: url( {{ job.image1.url }} )"></div>
-        {% endfor %}
-
     {% endblock %}
 
