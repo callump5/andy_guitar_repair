@@ -51,7 +51,35 @@ section {
     margin: 15px 0;
 }
 
+ a:hover {
+        text-decoration: none;
+    }
 
+    .link{
+        position: relative;
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .link:after{
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        display: block;
+        margin-top: 5px;
+        left: 0;
+        bottom: -5px;
+        background: #000000;
+        transition: width .2s ease;
+        -webkit-transition: width .2s ease;
+    }
+
+    .link:hover:after {
+        width: 100%;
+        left: 0;
+        background: #000000;
+    }
 /* Header */
 
 #nav-body, .my-nav-flex, #nav-links, #nav-header {

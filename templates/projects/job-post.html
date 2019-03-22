@@ -1,6 +1,6 @@
 <article class="jobpost">
 
-    <h2 class="jobpost-title">{{ job_post }}</h2>
+    <h2 class="jobpost-title"><a href="{% url 'project' job_post.pk %}">{{ job_post }}</a></h2>
 
     <div class="jobpost-content">
 
