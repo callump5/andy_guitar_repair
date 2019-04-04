@@ -1,9 +1,13 @@
 from base import *
-
 import dj_database_url
 
 DEBUG = False
 
+
+
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_KEY')
+GOOGLE_RECAPTCHA_SECRET_KEY = os.getenv('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 DATABASES = {
     'default': dj_database_url.config('CLEARDB_DATABASE_URL')
