@@ -11,8 +11,8 @@ import os
 
 def upload_site_img(instance, filename):
     filename_base, filename_ext = os.path.splitext(filename)
-    return 'action-guitars/%s%s' % (
-        now().strftime("%Y%m%d%H%M%S"),
+    return '%s%s' % (
+        filename_base,
         filename_ext.lower(),
     )
 
