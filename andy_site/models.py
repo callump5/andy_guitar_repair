@@ -2,14 +2,26 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.utils.timezone import now
+import os
 
 # Create your models here.
+
+
+
+def upload_site_img(instance, filename):
+    filename_base, filename_ext = os.path.splitext(filename)
+    return 'action-guitars/%s%s' % (
+        now().strftime("%Y%m%d%H%M%S"),
+        filename_ext.lower(),
+    )
+
 
 
 class Service(models.Model):
     service = models.CharField(max_length=200)
     description = models.TextField()
-    image = models.ImageField(upload_to='uploads/images/services')
+    image = models.ImageField(upload_to=upload_site_img)
     price =  models.DecimalField(max_digits=6, decimal_places=2)
 
     def __unicode__(self):
@@ -24,9 +36,9 @@ class JobBlogPost(models.Model):
     title = models.CharField(max_length=300)
     service = models.ForeignKey(Service, related_name='job_post_service')
     description = models.TextField()
-    image1 = models.ImageField(upload_to='uploads/images/jobposts')
-    image2 = models.ImageField(upload_to='uploads/images/jobposts', blank=True, null=True)
-    image3 = models.ImageField(upload_to='uploads/images/jobposts', blank=True, null=True)
+    image1 = models.ImageField(upload_to=upload_site_img)
+    image2 = models.ImageField(upload_to=upload_site_img, blank=True, null=True)
+    image3 = models.ImageField(upload_to=upload_site_img, blank=True, null=True)
 
 
     def __unicode__(self):

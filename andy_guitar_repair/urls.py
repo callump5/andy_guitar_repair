@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.views.static import serve
 
 
-from settings import STATIC_ROOT, MEDIA_ROOT
+from andy_settings.base import STATIC_ROOT, MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

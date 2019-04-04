@@ -5,3 +5,6 @@ whitenoise
 gunicorn
 django_forms_bootstrap
 django-crispy-forms
+dj_database_url
+django-storages
+boto

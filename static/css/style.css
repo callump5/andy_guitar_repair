@@ -95,7 +95,7 @@ section {
 }
 
 #logo {
-    font-size: 45px;
+    font-size: 50px;
     text-align: center;
 
     font-family: 'Comfortaa', cursive;
@@ -357,4 +357,14 @@ footer {
     width: auto;
 }
 
+.img {
+    position: relative;
+    float: left;
+    width:  250px;
+    height: 250px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    margin-bottom: 15px;
+}
 
