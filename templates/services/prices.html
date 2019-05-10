@@ -9,11 +9,13 @@
                 <h2 class="">{{ service.id }}</h2>
 
                 {% for item in itemprices %}
+                    {% if item.service.id == service.id %}
                         <div class="price-item">
                             <p>{{ item.name }}</p>
                             <p>{{ item.price }}</p>
                             <p>{{ item.id }}</p>
                         </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         {% endfor %}
