@@ -6,14 +6,14 @@
         {% for service in services %}
             <div class="price-cate">
                 <h2 class="cate-title">{{ service }}</h2>
+                <h2 class="">{{ service.id }}</h2>
 
                 {% for item in itemprices %}
-                    {% if item.id == service.id %}
                         <div class="price-item">
                             <p>{{ item.name }}</p>
                             <p>{{ item.price }}</p>
+                            <p>{{ item.id }}</p>
                         </div>
-                    {% endif %}
                 {% endfor %}
             </div>
         {% endfor %}
