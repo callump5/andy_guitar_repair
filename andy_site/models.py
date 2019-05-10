@@ -31,6 +31,27 @@ class Service(models.Model):
         verbose_name = 'Service'
         verbose_name_plural = 'Services'
 
+class PricingCate(models.Model):
+    category = models.CharField(max_length=500)
+
+    def __unicode__(self):
+        return self.category
+
+    class Meta:
+        verbose_name = 'Pricing Category'
+        verbose_name_plural = 'Pricing Categories'
+
+class PricingItem(models.Model):
+    cate = models.ForeignKey(PricingCate)
+    name = models.CharField(max_length=300)
+    price = models.DecimalField(max_digits=7, decimal_places=2)
+
+    def __str__(self):
+        return  str(self.cate.category) + ' - ' + self.name
+
+    class Meta:
+        verbose_name = 'Pricing Item'
+        verbose_name_plural = 'Pricing Items'
 
 class JobBlogPost(models.Model):
     title = models.CharField(max_length=300)

@@ -7,16 +7,23 @@
 
     {% include 'home/landing.html'%}
 
-    {% block content %}
-    
-    {% endblock %}
+
+    <div class="container">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
 
     {%  include 'home/img_break.html' %}
 
-    {% include 'contact/contact.html' %}
+
+    <div class="container">
+        {% include 'contact/contact.html' %}
+    </div>
+
 
     {% include 'base/footer.html' %}
 
-    
 {% endblock %}
 
