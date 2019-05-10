@@ -250,6 +250,11 @@ font-size: 0.8em;
         font-family: var(--logo-font);
         margin-top: 10px;
     }
+    #img-break-logo {
+        color: var(--font-color);
+        font-size: 55px;
+        font-family: var(--logo-font);
+    }
     #contacy-btn {
         width: 160px;
         font-family: var(--landing-font);
@@ -259,7 +264,7 @@ font-size: 0.8em;
     }
 
     #landing-text p, #img-break-text p {
-        font-size: 28px;
+        font-size: 26px;
         color: var(--font-color);
         font-weight: bolder;
         margin: 15px 0 25px 0;
