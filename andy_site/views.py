@@ -3,13 +3,14 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
 
-from .models import Service, Testimonials, JobBlogPost,  PricingItem
+from .models import Service, Testimonials, JobBlogPost, About, PricingItem
 from .forms import ContactRequestForm
 
 # Create your views here.
 
 
 def get_landing(request):
+    about = About.objects.all()
     services = Service.objects.all()
     itemprices = PricingItem.objects.all()
     testimonials = Testimonials.objects.all()
@@ -24,6 +25,7 @@ def get_landing(request):
     else:
         contact_form = ContactRequestForm
     args = {
+        'about': about,
         'services': services,
         'itemprices': itemprices,
         'testimonials': testimonials,

@@ -18,6 +18,19 @@ def upload_site_img(instance, filename):
 
 
 
+class About(models.Model):
+    about = models.TextField()
+
+
+    def __unicode__(self):
+        return 'Info' + ' - ' + str(self.id)
+
+    class Meta:
+        verbose_name = 'About Text'
+        verbose_name_plural = 'About Text'
+
+
+
 class Service(models.Model):
     service = models.CharField(max_length=200)
     description = models.TextField()
@@ -31,6 +44,7 @@ class Service(models.Model):
         verbose_name_plural = 'Services'
 
 
+
 class PricingItem(models.Model):
     cate = models.ForeignKey(Service)
     name = models.CharField(max_length=300)
@@ -42,6 +56,8 @@ class PricingItem(models.Model):
     class Meta:
         verbose_name = 'Service Price'
         verbose_name_plural = 'Service Prices'
+
+
 
 class JobBlogPost(models.Model):
     title = models.CharField(max_length=300)

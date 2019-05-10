@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from .models import Service, Testimonials, JobBlogPost, ContactRequest, PricingItem
+from .models import About, Service, Testimonials, JobBlogPost, ContactRequest, PricingItem
 
 from django.contrib import admin
 
+admin.site.register(About)
 admin.site.register(Service)
 admin.site.register(PricingItem)
 admin.site.register(Testimonials)
