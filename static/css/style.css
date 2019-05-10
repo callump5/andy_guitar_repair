@@ -245,9 +245,10 @@ font-size: 0.8em;
 
     #logo {
         color: var(--font-color);
-        height: 250px;
+        height: 300px;
         width: auto;
         font-family: var(--logo-font);
+        margin-top: 10px;
     }
     #contacy-btn {
         width: 160px;
@@ -258,10 +259,10 @@ font-size: 0.8em;
     }
 
     #landing-text p, #img-break-text p {
-        font-size: 35px;
+        font-size: 28px;
         color: var(--font-color);
         font-weight: bolder;
-        margin-bottom: 25px;
+        margin: 15px 0 25px 0;
         font-family: var(--landing-font)
     }
 
