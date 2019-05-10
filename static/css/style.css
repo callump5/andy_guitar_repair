@@ -404,6 +404,21 @@ align-items: baseline;
 }
 
 
+
+/* Price List */
+.price-cate {
+    margin-bottom: 15px;
+}
+
+.cate-title {
+    font-size: 1.3em;
+}
+
+.price-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 /* Job Gallery */
 
 .jobs-gallery {

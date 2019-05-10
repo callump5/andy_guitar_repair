@@ -1,0 +1,21 @@
+<section id="services">
+
+    <h1 class="title">Price List</h1>
+
+    <div class="price-list">
+        {% for category in services %}
+            <div class="price-cate">
+                <h2 class="cate-title">{{ category }}</h2>
+
+                {% for price in pricingitem %}
+                    {% if price.id == category.id %}
+                        <div class="price-item">
+                            <p>{{ price.name }}</p>
+                            <p>{{ price.price }}</p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
