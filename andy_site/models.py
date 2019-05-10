@@ -22,7 +22,6 @@ class Service(models.Model):
     service = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(upload_to=upload_site_img)
-    price =  models.DecimalField(max_digits=6, decimal_places=2)
 
     def __unicode__(self):
         return self.service
@@ -79,13 +78,13 @@ class Testimonials(models.Model):
 
 class ContactRequest(models.Model):
 
-    client = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     number = models.CharField(max_length=100)
     email = models.EmailField()
     description = models.TextField()
 
     def __unicode__(self):
-        return self.client
+        return self.name
 
     class Meta:
         verbose_name = 'Contact Request'

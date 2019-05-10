@@ -5,4 +5,4 @@ from .models import ContactRequest
 class ContactRequestForm(forms.ModelForm):
     class Meta:
         model = ContactRequest
-        fields = ['client', 'number', 'email', 'description']
+        fields = ['name', 'number', 'email', 'description']
