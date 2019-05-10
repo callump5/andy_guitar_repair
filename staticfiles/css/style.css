@@ -247,7 +247,7 @@ font-size: 0.8em;
         color: var(--font-color);
         height: 250px;
         width: auto;
-        font-family: var(--logo-font)
+        font-family: var(--logo-font);
     }
     #contacy-btn {
         width: 160px;
