@@ -27,6 +27,8 @@ SECRET_KEY = 'n_1ioo9l=63p2_pxw^=(&n_lhem)7=m9qc4v1sati+b@7+ulgj'
 
 ALLOWED_HOSTS = [
     'fieldwicks-guitar-repairs.herokuapp.com',
+    'www.actionguitars.co.uk'
+    'actionguitars.co.uk'
     '127.0.0.1'
 ]
 
