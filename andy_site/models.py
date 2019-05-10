@@ -106,3 +106,18 @@ class ContactRequest(models.Model):
         verbose_name = 'Contact Request'
         verbose_name_plural = 'Contact Request'
 
+
+class ContactInfo(models.Model):
+    name = models.CharField(max_length=200)
+    number = models.CharField(max_length=200)
+    email = models.CharField(max_length=400)
+    facebook = models.CharField(max_length=500)
+    youtube = models.CharField(max_length=500)
+
+
+    def __unicode__(self):
+        return 'My Contact Info'
+
+    class Meta:
+        verbose_name = 'Contact Info'
+        verbose_name_plural = 'Contact Infos'

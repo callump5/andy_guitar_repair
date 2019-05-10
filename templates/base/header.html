@@ -13,10 +13,21 @@
 
 
         <ul id="nav-contact" class="container my-nav-flex">
-            <li><a class="social-link" href="https://www.facebook.com/GRSsouthend/"><img class="nav-icon" src="/static/icons/fb-icon.png"></a></li>
-            <li><a class="social-link" href="mailto:clpullinger@gmail.com"><img class="nav-icon" src="/static/icons/email-icon.png"></a></li>
-            <li><a class="social-link" href="tel:07802805907"><img class="nav-icon" src="/static/icons/phone-icon.png"></a></li>
-            <li><a class="social-link" href="https://www.facebook.com/GRSsouthend/"><img class="nav-icon" src="/static/icons/youtube-icon.png"></a></li>
+            {% if contact_info.facebook %}
+                <li><a class="social-link" href="{{ contact_info.facebook }}"><img class="nav-icon" src="/static/icons/fb-icon.png"></a></li>
+            {% endif %}
+
+            {% if contact_info.facebook %}
+                <li><a class="social-link" href="mailto:{{ contact_info.email }}"><img class="nav-icon" src="/static/icons/email-icon.png"></a></li>
+            {% endif %}
+
+            {% if contact_info.facebook %}
+                <li><a class="social-link" href="{{ contact_info.number }}"><img class="nav-icon" src="/static/icons/phone-icon.png"></a></li>
+            {% endif %}
+
+            {% if contact_info.facebook %}
+                <li><a class="social-link" href="{{ contact_info.youtube }}"><img class="nav-icon" src="/static/icons/youtube-icon.png"></a></li>
+            {% endif %}
         </ul>
 
     </div>
