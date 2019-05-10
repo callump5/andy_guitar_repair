@@ -80,7 +80,7 @@
     }
 
     section {
-        padding-bottom: 15px;
+        padding-bottom: 25px;
     }
 
 
@@ -275,7 +275,7 @@ font-size: 0.8em;
 
 /* Service */
 
-    #services {
+    #services, #about {
         border-bottom: 1px solid var(--color-1);
     }
 
