@@ -11,7 +11,7 @@ from .forms import ContactRequestForm
 
 def get_landing(request):
     services = Service.objects.all()
-    priceitem = PricingItem.objects.all()
+    itemprices = PricingItem.objects.all()
     testimonials = Testimonials.objects.all()
 
     if request.method == 'POST':
@@ -25,7 +25,7 @@ def get_landing(request):
         contact_form = ContactRequestForm
     args = {
         'services': services,
-        'pricingitem': priceitem,
+        'itemprices': itemprices,
         'testimonials': testimonials,
         'form': contact_form
     }

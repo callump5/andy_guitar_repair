@@ -40,8 +40,8 @@ class PricingItem(models.Model):
         return  str(self.cate.service) + ' - ' + self.name
 
     class Meta:
-        verbose_name = 'Pricing Item'
-        verbose_name_plural = 'Pricing Items'
+        verbose_name = 'Service Price'
+        verbose_name_plural = 'Service Prices'
 
 class JobBlogPost(models.Model):
     title = models.CharField(max_length=300)
