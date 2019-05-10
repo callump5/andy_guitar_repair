@@ -10,13 +10,26 @@
         font-family: 'Righteous', cursive;
 
         font-family: 'Lato', sans-serif;
+
+
+
+
+
+    font-family: 'Akronim', cursive;
+
+    font-family: 'Stylish', sans-serif;
+
+    font-family: 'Lobster', cursive;
+
+
     */
 
 /* Vars */
 
     :root {
         --font-color: #ffffff;
-        --landing-font: 'Comfortaa', cursive;
+        --logo-font: 'Lobster', cursive;
+        --landing-font: 'Lato', sans-serif;
         --color-1: #575757;
     }
 
@@ -210,11 +223,11 @@ font-size: 0.8em;
     }
 
     #landing {
-        background-image: linear-gradient(to left, rgba(138, 138, 138, 0.7), rgba(113, 90, 90, 0.7)) , url("/static/4k-wallpaper-blur-close-up-1266821.jpg");
+        background-image: linear-gradient(to left, rgba(138, 138, 138, 0.7), rgba(70, 55, 55, 0.7)) , url("/static/4k-wallpaper-blur-close-up-1266821.jpg");
     }
 
     #img-break {
-        background-image: linear-gradient(to left, rgba(138, 138, 138, 0.7), rgba(113, 90, 90, 0.7)) , url("/static/4k-wallpaper-blur-close-up-1266821.jpg");
+        background-image: linear-gradient(to left, rgba(138, 138, 138, 0.7), rgba(70, 55, 55, 0.7)) , url("/static/4k-wallpaper-blur-close-up-1266821.jpg");
     }
 
     #landing-text, #img-break-text {
@@ -226,8 +239,8 @@ font-size: 0.8em;
 
     #logo {
         color: var(--font-color);
-        font-size: 55px;
-        font-family: var(--landing-font)
+        font-size: 65px;
+        font-family: var(--logo-font)
     }
     #contacy-btn {
         width: 160px;
@@ -238,10 +251,10 @@ font-size: 0.8em;
     }
 
     #landing-text p, #img-break-text p {
-        font-size: 25px;
+        font-size: 35px;
         color: var(--font-color);
         font-weight: bolder;
-        margin: 15px 0;
+        margin: 25px 0;
 
         font-family: var(--landing-font)
     }
