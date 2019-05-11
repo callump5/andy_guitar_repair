@@ -4,8 +4,11 @@
 
         <img id="logo" src="/static/guitar-logo-1.png">
 
-        <p>With more than 12 years now We have been repairing fretted instruments for local pickers, recording musicians and clients throughout the UK</p>
-
+        {% for text in image_content %}
+            {% if text.id == 2 %}
+                <p>{{ text.text }}</p>
+            {% endif %}
+        {% endfor %}
 
         <a id="contacy-btn" class="link-white" href="#contact">Contact Us!</a>
     </div>

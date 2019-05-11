@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from .models import About, Service, Testimonials, JobBlogPost, ContactRequest, ContactInfo, PricingItem
+from .models import About, Service, Testimonials, JobBlogPost, ContactRequest, ContactInfo, PricingItem, ImageContent
 
 from django.contrib import admin
 
@@ -12,6 +12,7 @@ admin.site.register(Testimonials)
 admin.site.register(JobBlogPost)
 admin.site.register(ContactRequest)
 admin.site.register(ContactInfo)
+admin.site.register(ImageContent)
 
 
 # Register your models here.

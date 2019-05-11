@@ -30,6 +30,18 @@ class About(models.Model):
         verbose_name_plural = 'About Text'
 
 
+class ImageContent(models.Model):
+    text = models.TextField()
+
+
+    def __unicode__(self):
+        return 'Text' + ' - ' + str(self.id)
+
+    class Meta:
+        verbose_name = 'Image Text'
+        verbose_name_plural = 'Image Texts'
+
+
 
 class Service(models.Model):
     service = models.CharField(max_length=200)
