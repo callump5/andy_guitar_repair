@@ -11,7 +11,8 @@ from .forms import ContactRequestForm
 
 def get_landing(request):
     contact_info = ContactInfo.objects.all().first()
-    image_content = ImageContent.objects.all()[:2]
+    landing_content = ImageContent.objects.first()
+    image_content = ImageContent.objects.all()[1]
     about = About.objects.all()
     services = Service.objects.all()
     itemprices = PricingItem.objects.all()
@@ -28,6 +29,7 @@ def get_landing(request):
         contact_form = ContactRequestForm
     args = {
         'contact_info': contact_info,
+        'landing_content': landing_content,
         'image_content': image_content,
         'about': about,
         'services': services,

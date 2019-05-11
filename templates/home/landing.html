@@ -2,11 +2,7 @@
     <div id="landing-text" class="container">
 
         <img id="logo" src="/static/guitar-logo-1.png">
-        {% for text in image_content %}
-            {% if text.id == 1 %}
-                <p>{{ text.text }}</p>
-            {% endif %}
-        {% endfor %}
+        <p>{{ landing_content.text }}</p>
         <a id="contacy-btn" class="link-white" href="#contact">Contact Us!</a>
     </div>
 </section>
