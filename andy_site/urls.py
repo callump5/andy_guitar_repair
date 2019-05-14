@@ -11,5 +11,5 @@ urlpatterns = [
     url(r'project-gallery/$', get_galley, name='gallery'),
     url(r'project-gallery/(?P<job_id>\d+)/$', get_project, name='project'),
 
-    url(r'.well-known./pki-validation/starfield.html', get_ssl)
+    url(r'.well-known/pki-validation/starfield.html', get_ssl)
 ]
