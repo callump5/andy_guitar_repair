@@ -3,11 +3,20 @@
     {% block content %}
         <section id="service">
 
-            <div class="service-titles">
-                <h1 class="title">{{ service }}</h1><h2> - {{service.price }}</h2>
-            </div>
-
+            <h1 class="title">{{ service }}</h1>
             <p>{{ service.description }}</p>
+
+
+
+            {% for item in itemprices %}
+                {% if item.cate_id == service.id %}
+                    <h2 class="title">Prices</h2>
+                    <div class="price-item">
+                        <p>{{ item.name }}</p>
+                        <p>{{ item.price }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
 
         {% include 'services/../projects/job-gallery.html' %}
         </section>

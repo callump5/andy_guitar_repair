@@ -9,6 +9,7 @@ from .forms import ContactRequestForm
 # Create your views here.
 
 
+
 def get_landing(request):
     contact_info = ContactInfo.objects.all().first()
     landing_content = ImageContent.objects.first()
@@ -27,6 +28,7 @@ def get_landing(request):
              contact_form = ContactRequestForm()
     else:
         contact_form = ContactRequestForm
+
     args = {
         'contact_info': contact_info,
         'landing_content': landing_content,
@@ -41,13 +43,15 @@ def get_landing(request):
     return render(request, 'home/home_page.html', args)
 
 
+
 def get_services(request):
 
-    services = Service.objects.all()
-    job_posts = JobBlogPost.objects.all()[:5]
     contact_info = ContactInfo.objects.all().first()
-    image_content = ImageContent.objects.all()[:1]
-
+    landing_content = ImageContent.objects.first()
+    image_content = ImageContent.objects.all()[1]
+    about = About.objects.all()
+    services = Service.objects.all()
+    itemprices = PricingItem.objects.all()
     testimonials = Testimonials.objects.all()
 
     if request.method == 'POST':
@@ -61,11 +65,12 @@ def get_services(request):
         contact_form = ContactRequestForm
 
     args = {
-
         'contact_info': contact_info,
+        'landing_content': landing_content,
         'image_content': image_content,
+        'about': about,
         'services': services,
-        'job_posts': job_posts,
+        'itemprices': itemprices,
         'testimonials': testimonials,
         'form': contact_form
     }
@@ -77,6 +82,15 @@ def get_service(request, service_id):
 
     service = Service.objects.get(pk=service_id)
     jobs = JobBlogPost.objects.filter(service_id=service_id)
+
+    contact_info = ContactInfo.objects.all().first()
+    landing_content = ImageContent.objects.first()
+    image_content = ImageContent.objects.all()[1]
+    about = About.objects.all()
+    services = Service.objects.all()
+    itemprices = PricingItem.objects.all()
+    testimonials = Testimonials.objects.all()
+
 
     if request.method == 'POST':
         contact_form = ContactRequestForm(request.POST)
@@ -91,6 +105,13 @@ def get_service(request, service_id):
     args = {
         'service': service,
         'jobs': jobs,
+        'contact_info': contact_info,
+        'landing_content': landing_content,
+        'image_content': image_content,
+        'about': about,
+        'services': services,
+        'itemprices': itemprices,
+        'testimonials': testimonials,
         'form': contact_form
     }
 
