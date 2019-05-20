@@ -323,6 +323,12 @@ margin: 10px;
 
 .client {
 font-weight: 300;
+    margin-top: 5px;
+}
+
+.location {
+font-weight: 300;
+    font-size: 0.9em;
 }
 
 

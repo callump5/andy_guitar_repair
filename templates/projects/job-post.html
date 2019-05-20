@@ -12,10 +12,10 @@
                     <h2>What They Said...</h2>
                     <p class="blog-text">{{ job_post.job_post_testimonial.first.testimonial }}</p>
                     <p class="client"> - {{ job_post.job_post_testimonial.first.client }}</p>
+                    <p class="location"> - {{ job_post.job_post_testimonial.first.location }}</p>
                 </div>
             {% endif %}
         </div>
 
-        <img id="job-img" class="jobpost-img" src="{{ job_post.image1.url }}">
     </div>
 </article>

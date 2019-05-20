@@ -93,6 +93,7 @@ class JobBlogPost(models.Model):
 class Testimonials(models.Model):
     job = models.ForeignKey(JobBlogPost, related_name='job_post_testimonial')
     client = models.CharField(max_length=200)
+    location = models.CharField(max_length=300)
     testimonial = models.TextField()
 
     def __unicode__(self):

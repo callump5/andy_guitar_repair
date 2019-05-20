@@ -101,6 +101,14 @@ def get_galley(request):
 
     jobs = JobBlogPost.objects.all()
 
+    contact_info = ContactInfo.objects.all().first()
+    landing_content = ImageContent.objects.first()
+    image_content = ImageContent.objects.all()[1]
+    about = About.objects.all()
+    services = Service.objects.all()
+    itemprices = PricingItem.objects.all()
+    testimonials = Testimonials.objects.all()
+
     if request.method == 'POST':
         contact_form = ContactRequestForm(request.POST)
         if contact_form.is_valid():
@@ -113,6 +121,13 @@ def get_galley(request):
 
     args = {
         'jobs': jobs,
+        'contact_info': contact_info,
+        'landing_content': landing_content,
+        'image_content': image_content,
+        'about': about,
+        'services': services,
+        'itemprices': itemprices,
+        'testimonials': testimonials,
         'form': contact_form
     }
 
@@ -123,10 +138,13 @@ def get_project(request, job_id):
 
     job_post = JobBlogPost.objects.get(pk=job_id)
 
-    services = Service.objects.all()
-    job_posts = JobBlogPost.objects.all()[:5]
+
     contact_info = ContactInfo.objects.all().first()
-    image_content = ImageContent.objects.all()[:1]
+    landing_content = ImageContent.objects.first()
+    image_content = ImageContent.objects.all()[1]
+    about = About.objects.all()
+    services = Service.objects.all()
+    itemprices = PricingItem.objects.all()
     testimonials = Testimonials.objects.all()
 
     if request.method == 'POST':
@@ -143,9 +161,11 @@ def get_project(request, job_id):
         'job_post': job_post,
 
         'contact_info': contact_info,
+        'landing_content': landing_content,
         'image_content': image_content,
+        'about': about,
         'services': services,
-        'job_posts': job_posts,
+        'itemprices': itemprices,
         'testimonials': testimonials,
         'form': contact_form
     }

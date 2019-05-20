@@ -10,15 +10,18 @@
 
     <div class="project-imgs">
 
-        <img class="jobpost-img" src="{{ job_post.image1.url }}">
-        <img class="jobpost-img" src="{{ job_post.image2.url }}">
-        <img class="jobpost-img" src="{{ job_post.image3.url }}">
+        <div class="img" style="background-image:url({{ job_post.image1.url }})"></div>
+
+        {% if job.image2 %}
+           <div class="img" style="background-image:url({{ job_post.image2.url }})"></div>
+        {% endif %}
+
+        {% if job.image3 %}
+           <div class="img" style="background-image:url({{ job_post.image3.url }})"></div>
+        {% endif %}
 
     </div>
 
-        <script type="text/javascript">
-            $('#job-img').css('display', 'none')
-        </script>
 
     </section>
 
