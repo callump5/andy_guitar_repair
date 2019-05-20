@@ -123,6 +123,12 @@ def get_project(request, job_id):
 
     job_post = JobBlogPost.objects.get(pk=job_id)
 
+    services = Service.objects.all()
+    job_posts = JobBlogPost.objects.all()[:5]
+    contact_info = ContactInfo.objects.all().first()
+    image_content = ImageContent.objects.all()[:1]
+    testimonials = Testimonials.objects.all()
+
     if request.method == 'POST':
         contact_form = ContactRequestForm(request.POST)
         if contact_form.is_valid():
@@ -135,6 +141,12 @@ def get_project(request, job_id):
 
     args = {
         'job_post': job_post,
+
+        'contact_info': contact_info,
+        'image_content': image_content,
+        'services': services,
+        'job_posts': job_posts,
+        'testimonials': testimonials,
         'form': contact_form
     }
 
