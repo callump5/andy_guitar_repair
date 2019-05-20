@@ -7,10 +7,10 @@
             <p>{{ service.description }}</p>
 
 
-
+            <h2 class="title">Prices</h2>
+        
             {% for item in itemprices %}
                 {% if item.cate_id == service.id %}
-                    <h2 class="title">Prices</h2>
                     <div class="price-item">
                         <p>{{ item.name }}</p>
                         <p>{{ item.price }}</p>
