@@ -151,3 +151,7 @@ def get_project(request, job_id):
     }
 
     return render(request, 'projects/project.html', args)
+
+def get_ssl(request):
+
+    return render(request, '.well-known/pki-validation/starfield.html')
