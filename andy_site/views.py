@@ -84,7 +84,7 @@ def get_services(request):
 def get_service(request, service_id):
 
     service = Service.objects.get(pk=service_id)
-    jobs = GalleryPost.objects.filter(service_id=service_id)
+    jobs = GalleryPost.objects.filter(id=service_id)
 
     contact_info = ContactInfo.objects.all().first()
     landing_content = ImageContent.objects.first()
