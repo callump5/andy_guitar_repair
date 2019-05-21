@@ -16,7 +16,7 @@ def get_landing(request):
     landing_content = ImageContent.objects.first()
     image_content = ImageContent.objects.all()[1]
     about = About.objects.all()
-    services = Service.objects.all()
+    services = Service.objects.all().order_by('rank')
     itemprices = PricingItem.objects.all()
     testimonials = Testimonials.objects.all()
 

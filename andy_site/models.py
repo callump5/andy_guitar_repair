@@ -47,6 +47,7 @@ class Service(models.Model):
     service = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(upload_to=upload_site_img)
+    rank = models.IntegerField()
 
     def __unicode__(self):
         return self.service
