@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-from .models import Service, Testimonials, About, PricingItem, ContactInfo, ImageContent
+from .models import Service, Testimonials, GalleryPost, About, PricingItem, ContactInfo, ImageContent
 from .forms import ContactRequestForm
 
 # Create your views here.
@@ -84,6 +84,7 @@ def get_services(request):
 def get_service(request, service_id):
 
     service = Service.objects.get(pk=service_id)
+    jobs = GalleryPost.objects.filter(service_id=service_id)
 
     contact_info = ContactInfo.objects.all().first()
     landing_content = ImageContent.objects.first()
@@ -107,6 +108,7 @@ def get_service(request, service_id):
 
     args = {
         'service': service,
+        'jobs': jobs,
         'contact_info': contact_info,
         'landing_content': landing_content,
         'image_content': image_content,
@@ -122,6 +124,7 @@ def get_service(request, service_id):
 
 def get_galley(request):
 
+    jobs = GalleryPost.objects.all()
 
     contact_info = ContactInfo.objects.all().first()
     landing_content = ImageContent.objects.first()
@@ -143,6 +146,7 @@ def get_galley(request):
         contact_form = ContactRequestForm
 
     args = {
+        'jobs': jobs,
         'contact_info': contact_info,
         'landing_content': landing_content,
         'image_content': image_content,
@@ -158,6 +162,7 @@ def get_galley(request):
 
 def get_project(request, job_id):
 
+    job_post = GalleryPost.objects.get(pk=job_id)
 
 
     contact_info = ContactInfo.objects.all().first()
@@ -180,6 +185,7 @@ def get_project(request, job_id):
         contact_form = ContactRequestForm
 
     args = {
+        'job_post': job_post,
 
         'contact_info': contact_info,
         'landing_content': landing_content,

@@ -71,6 +71,34 @@ class PricingItem(models.Model):
 
 
 
+class GalleryPost(models.Model):
+    title = models.CharField(max_length=300)
+    description = models.TextField()
+    image1 = models.ImageField(upload_to=upload_site_img)
+    image2 = models.ImageField(upload_to=upload_site_img, blank=True, null=True)
+    image3 = models.ImageField(upload_to=upload_site_img, blank=True, null=True)
+
+    tag1 = models.CharField(max_length=200, blank=True, null=True)
+    tag2 = models.CharField(max_length=200, blank=True, null=True)
+    tag3 = models.CharField(max_length=200, blank=True, null=True)
+    tag4 = models.CharField(max_length=200, blank=True, null=True)
+    tag5 = models.CharField(max_length=200, blank=True, null=True)
+    tag6 = models.CharField(max_length=200, blank=True, null=True)
+    tag7 = models.CharField(max_length=200, blank=True, null=True)
+    tag8 = models.CharField(max_length=200, blank=True, null=True)
+    tag9 = models.CharField(max_length=200, blank=True, null=True)
+
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Gallery Post'
+        verbose_name_plural = 'Gallery Posts'
+
+
+
+
 class Testimonials(models.Model):
     client = models.CharField(max_length=200)
     location = models.CharField(max_length=300)
