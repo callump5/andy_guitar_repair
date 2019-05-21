@@ -2,14 +2,60 @@
 
     <div class="jobs-gallery">
         {% for job in jobs %}
-            <a href="{% url 'project' job.pk %}"><div class="img link" style="background-image:url({{ job.image1.url }})"></div></a>
 
-            {% if job.image2 %}
-                <a href="{% url 'project' job.pk %}"><div class="img link" style="background-image:url({{ job.image2.url }})"></div></a>
-            {% endif %}
+            <article class="gallery-post">
 
-            {% if job.image3 %}
-                <a href="{% url 'project' job.pk %}"><div class="img link" style="background-image:url({{ job.image3.url }})"></div></a>
-            {% endif %}
+
+                <h1 class="title">{{ job }}</h1>
+
+                <div class="gallery-img">
+
+                    <div class="img" style="background-image:url({{ job.image1.url }})"></div>
+
+                    {% if job.image2 %}
+                        <div class="img" style="background-image:url({{ job.image2.url }})"></div>
+                    {% endif %}
+
+                    {% if job.image3 %}
+                        <div class="img" style="background-image:url({{ job.image3.url }})"></div>
+                    {% endif %}
+                </div>
+
+
+                <p>{{job.description }}</p>
+
+                <p>
+                    {% if job.tag1 %}
+                        #{{ job.tag1 }}
+                    {% endif %}
+                    {% if job.tag2 %}
+                        #{{ job.tag2 }}
+                    {% endif %}
+                    {% if job.tag3 %}
+                        #{{ job.tag3 }}
+                    {% endif %}
+                    {% if job.tag4 %}
+                        #{{ job.tag4 }}
+                    {% endif %}
+                    {% if job.tag5 %}
+                        #{{ job.tag5 }}
+                    {% endif %}
+                    {% if job.tag6 %}
+                        #{{ job.tag6 }}
+                    {% endif %}
+                    {% if job.tag7 %}
+                        #{{ job.tag7 }}
+                    {% endif %}
+                    {% if job.tag8 %}
+                        #{{ job.tag8 }}
+                    {% endif %}
+                    {% if job.tag9 %}
+                        #{{ job.tag9 }}
+                    {% endif %}
+                </p>
+
+
+            </article>
+
         {% endfor %}
     </div>

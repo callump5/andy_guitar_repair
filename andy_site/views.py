@@ -2,8 +2,9 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
-from .models import Service, Testimonials, JobBlogPost, About, PricingItem, ContactInfo, ImageContent
+from .models import Service, Testimonials, GalleryPost, About, PricingItem, ContactInfo, ImageContent
 from .forms import ContactRequestForm
 
 # Create your views here.
@@ -23,6 +24,7 @@ def get_landing(request):
         contact_form = ContactRequestForm(request.POST)
         if contact_form.is_valid():
             contact_form.save()
+            messages.success(request, 'Thanks for getting in touch! We will try to contact you as soon as possible!')
             return redirect('home')
         else:
              contact_form = ContactRequestForm()
@@ -58,6 +60,7 @@ def get_services(request):
         contact_form = ContactRequestForm(request.POST)
         if contact_form.is_valid():
             contact_form.save()
+            messages.success(request, 'Thanks for getting in touch! We will try to contact you as soon as possible!')
             return redirect('services')
         else:
             contact_form = ContactRequestForm()
@@ -81,7 +84,7 @@ def get_services(request):
 def get_service(request, service_id):
 
     service = Service.objects.get(pk=service_id)
-    jobs = JobBlogPost.objects.filter(service_id=service_id)
+    jobs = GalleryPost.objects.filter(service_id=service_id)
 
     contact_info = ContactInfo.objects.all().first()
     landing_content = ImageContent.objects.first()
@@ -96,6 +99,7 @@ def get_service(request, service_id):
         contact_form = ContactRequestForm(request.POST)
         if contact_form.is_valid():
             contact_form.save()
+            messages.success(request, 'Thanks for getting in touch! We will try to contact you as soon as possible!')
             return redirect('services')
         else:
             contact_form = ContactRequestForm()
@@ -120,7 +124,7 @@ def get_service(request, service_id):
 
 def get_galley(request):
 
-    jobs = JobBlogPost.objects.all()
+    jobs = GalleryPost.objects.all()
 
     contact_info = ContactInfo.objects.all().first()
     landing_content = ImageContent.objects.first()
@@ -134,6 +138,7 @@ def get_galley(request):
         contact_form = ContactRequestForm(request.POST)
         if contact_form.is_valid():
             contact_form.save()
+            messages.success(request, 'Thanks for getting in touch! We will try to contact you as soon as possible!')
             return redirect('services')
         else:
             contact_form = ContactRequestForm()
@@ -157,7 +162,7 @@ def get_galley(request):
 
 def get_project(request, job_id):
 
-    job_post = JobBlogPost.objects.get(pk=job_id)
+    job_post = GalleryPost.objects.get(pk=job_id)
 
 
     contact_info = ContactInfo.objects.all().first()
@@ -172,6 +177,7 @@ def get_project(request, job_id):
         contact_form = ContactRequestForm(request.POST)
         if contact_form.is_valid():
             contact_form.save()
+            messages.success(request, 'Thanks for getting in touch! We will try to contact you as soon as possible!')
             return redirect('services')
         else:
             contact_form = ContactRequestForm()

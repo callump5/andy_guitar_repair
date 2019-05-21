@@ -451,51 +451,46 @@ align-items: baseline;
     flex-direction: row;
     justify-content: space-between;
 }
+
+
+
 /* Job Gallery */
 
-.jobs-gallery {
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-align-items: center;
-justify-content: space-evenly;
-margin: 20px 0;
-}
+    .jobs-gallery {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 20px 0;
+    }
 
 
-.jobs-gallery-img {
-height: auto;
-width: auto;
-max-height: 250px;
-max-width: 250px;
-min-height: 100px;
-min-width: 100px;
-margin-bottom: 20px;
-}
+    .gallery-post {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .gallery-img {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 
-.project-imgs {
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-}
-
-.project-imgs img {
-height: 150px;
-width: auto;
-}
-
-.img {
-position: relative;
-float: left;
-width:  250px;
-height: 250px;
-background-position: 50% 50%;
-background-repeat:   no-repeat;
-background-size:     cover;
-margin-bottom: 15px;
-}
+    .img {
+        position: relative;
+        float: left;
+        width:  250px;
+        height: 250px;
+        background-position: 50% 50%;
+        background-repeat:   no-repeat;
+        background-size:     cover;
+        margin: 0 5px 10px 5px
+    }
 
 @media only screen and (max-width: 600px) {
   .container {
