@@ -543,7 +543,7 @@ margin-bottom: 15px;
         flex-direction: column-reverse;
     }
 
-    #email-contact {
-        font-size: 0.8em;
+    #contact_info p {
+        font-size: 1.3em;
     }
 }
