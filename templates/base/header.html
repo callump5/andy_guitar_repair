@@ -11,6 +11,8 @@
 
         <hr>
 
+        <img id="nav-toggle" src="/static/icons8-menu-30.png">
+
 
         <ul id="nav-contact" class="container my-nav-flex">
             {% if contact_info.facebook %}
@@ -31,6 +33,13 @@
         </ul>
 
     </div>
+
+
+    <script type="text/javascript">
+        $('#nav-toggle').on('click', function () {
+            $('#nav-links').toggle('fast')
+        })
+    </script>
 </nav>
 
 
