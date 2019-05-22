@@ -3,23 +3,18 @@
         /*
             font-family: 'Lobster', cursive;
 
-            font-family: 'Baloo Chettan', cursive;
-
-            font-family: 'Comfortaa', cursive;
-
-            font-family: 'Righteous', cursive;
 
             font-family: 'Lato', sans-serif;
 
 
 
+            font-family: 'Quicksand', sans-serif;
+
+            font-family: 'Libre Baskerville', serif;
 
 
-        font-family: 'Akronim', cursive;
 
-        font-family: 'Stylish', sans-serif;
-
-        font-family: 'Lobster', cursive;
+            font-family: 'Lobster', cursive;
 
 
         */
@@ -29,7 +24,8 @@
         :root {
             --font-color: #ffffff;
             --logo-font: 'Lobster', cursive;
-            --landing-font: 'Lato', sans-serif;
+            --landing-font: 'Libre Baskerville', serif;
+
             --color-1: #575757;
             --color-2: #A11326;
         }
@@ -42,7 +38,7 @@
             box-sizing: border-box;
 
             font-size: 20px;
-            font-family: 'Lato', sans-serif;
+            font-family: var(--landing-font);
             font-weight: bold;
             color: black;
             list-style: none;
@@ -541,4 +537,12 @@ align-items: baseline;
     #contact_info p {
         font-size: 1.1em;
     }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    #nav-links li {
+        margin: 0 15px;
+    }
+
 }
