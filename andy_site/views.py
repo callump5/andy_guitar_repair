@@ -202,3 +202,7 @@ def get_project(request, job_id):
 def get_ssl(request):
 
     return render(request, '.well-known/pki-validation/starfield.html')
+
+def get_sitemap(request):
+
+    return render(request, '.sitemap/sitemap.xml')
