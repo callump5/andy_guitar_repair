@@ -18,8 +18,6 @@
 
     <!-- Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Action Guitars has 15 years experiance in guitar repair. Check our price list for all
-     your guitar repair needs! Based in Essex, we serve Leigh on sea, Canvey Island, Rayleigh, Basildon, and Southend">
     <meta name="keywords" content="guitar repair, bass repair, guitar, repair, essex, leigh-on-sea, pickups, installation">
     <meta name="robots" content="index, follow" />
 
@@ -43,6 +41,14 @@
       gtag('config', 'UA-123955938-3');
     </script>
 
+
+    {% block head_js %}
+        <meta name="title" content="Action Guitars">
+        <meta name="description" content="Action Guitars has 15 years experiance in guitar, bass and amp repair. Check our price list for all
+        your guitar repair needs! Based in Essex, we serve Leigh on sea, Canvey Island, Rayleigh, Basildon, and Southend">
+
+
+    {% endblock %}
 
 </head>
 

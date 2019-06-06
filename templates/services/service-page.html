@@ -1,5 +1,12 @@
 {% extends 'base/base.html' %}
 
+{% block head_js %}
+      <!-- Meta Tags -->
+    <meta name="title" content="{{ service }}">
+    <meta name="description" content="{{ service.description }}">
+
+{% endblock %}
+
     {% block content %}
         <section id="service">
 
