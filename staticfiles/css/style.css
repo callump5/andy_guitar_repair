@@ -206,7 +206,12 @@
         text-align: center;
     }
     .my-tag {
-    margin: 10px 0;
+        font-size: 20px;
+        margin: 20px 0;
+    }
+
+    .my-tag a {
+        font-size: 22px;
     }
 
     .footer-nav a {
