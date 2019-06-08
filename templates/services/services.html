@@ -5,7 +5,7 @@
     <div class="services-list">
         {% for service in services %}
             <div class="service link">
-            <a class="link" href="{% url 'service' service.pk %}">
+            <a class="link" href="{% url 'service' service.slug %}">
 
                 <div class="service-img" style="background-image: url( {{ service.image.url }} )">
                 </div>

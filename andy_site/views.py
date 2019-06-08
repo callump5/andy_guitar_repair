@@ -81,10 +81,9 @@ def get_services(request):
     return render(request, 'services/services-page.html', args)
 
 
-def get_service(request, service_id):
+def get_service(request, service_slug):
 
-    service = Service.objects.get(pk=service_id)
-    jobs = GalleryPost.objects.filter(id=service_id)
+    service = Service.objects.filter(slug__exact=service_slug).first()
 
     contact_info = ContactInfo.objects.all().first()
     landing_content = ImageContent.objects.first()
@@ -108,7 +107,6 @@ def get_service(request, service_id):
 
     args = {
         'service': service,
-        'jobs': jobs,
         'contact_info': contact_info,
         'landing_content': landing_content,
         'image_content': image_content,

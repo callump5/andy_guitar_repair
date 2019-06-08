@@ -3,6 +3,9 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils.timezone import now
+from django.utils.text import slugify
+
+from django.urls import reverse
 import os
 
 # Create your models here.
@@ -48,6 +51,24 @@ class Service(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to=upload_site_img)
     rank = models.IntegerField()
+
+    slug = models.SlugField(
+        default='',
+        editable=False,
+        max_length=200
+    )
+
+    def get_absolute_url(self):
+        kwargs = {
+            'pk': self.id,
+            'slug': self.slug
+        }
+        return reverse('article-pk-slug-detail', kwargs=kwargs)
+
+    def save(self, *args, **kwargs):
+        value = self.service
+        self.slug = slugify(value, allow_unicode=True)
+        super(Service, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.service
