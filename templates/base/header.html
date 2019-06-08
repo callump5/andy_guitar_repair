@@ -12,24 +12,24 @@
 
         <hr>
 
-        <img id="nav-toggle" src="/static/icons8-menu-30.png">
+        <img alt="Menu Toggle" id="nav-toggle" src="/static/icons8-menu-30.png">
 
 
         <ul id="nav-contact" class="container my-nav-flex">
             {% if contact_info.facebook %}
-                <li><a class="social-link" href="{{ contact_info.facebook }}"><img class="nav-icon" src="/static/icons/fb-icon.png"></a></li>
+                <li><a class="social-link" href="{{ contact_info.facebook }}"><img alt="Fb Icon" class="nav-icon" src="/static/icons/fb-icon.png"></a></li>
             {% endif %}
 
             {% if contact_info.facebook %}
-                <li><a class="social-link" href="mailto:{{ contact_info.email }}"><img class="nav-icon" src="/static/icons/email-icon.png"></a></li>
+                <li><a class="social-link" href="mailto:{{ contact_info.email }}"><img alt="Email Icon"class="nav-icon" src="/static/icons/email-icon.png"></a></li>
             {% endif %}
 
             {% if contact_info.facebook %}
-                <li><a class="social-link" href="tel:{{ contact_info.number }}"><img class="nav-icon" src="/static/icons/phone-icon.png"></a></li>
+                <li><a class="social-link" href="tel:{{ contact_info.number }}"><img alt="Phone Icon"class="nav-icon" src="/static/icons/phone-icon.png"></a></li>
             {% endif %}
 
             {% if contact_info.facebook %}
-                <li><a class="social-link" href="{{ contact_info.youtube }}"><img class="nav-icon" src="/static/icons/youtube-icon.png"></a></li>
+                <li><a class="social-link" href="{{ contact_info.youtube }}"><img alt="Youtube Icon" class="nav-icon" src="/static/icons/youtube-icon.png"></a></li>
             {% endif %}
         </ul>
 

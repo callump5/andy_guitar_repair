@@ -7,7 +7,7 @@
             <div class="service link">
             <a class="link" href="{% url 'service' service.slug %}">
 
-                <div class="service-img" style="background-image: url( {{ service.image.url }} )">
+                <div class="service-img" title="{{ service }}" style="background-image: url( {{ service.image.url }} )">
                 </div>
                 <h2>{{ service }}</h2>
             </a>
