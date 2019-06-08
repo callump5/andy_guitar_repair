@@ -204,3 +204,7 @@ def get_ssl(request):
 def get_sitemap(request):
 
     return render(request, '.sitemap/sitemap.xml')
+
+def get_robots(request):
+
+    return render(request, '.robots/robots.txt')
