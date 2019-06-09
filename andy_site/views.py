@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 
 from .models import Service, Testimonials, GalleryPost, About, PricingItem, ContactInfo, ImageContent
@@ -83,7 +83,7 @@ def get_services(request):
 
 def get_service(request, service_slug):
 
-    service = Service.objects.filter(slug__exact=service_slug).first()
+    service = get_object_or_404(Service, slug=service_slug)
 
     contact_info = ContactInfo.objects.all().first()
     landing_content = ImageContent.objects.first()

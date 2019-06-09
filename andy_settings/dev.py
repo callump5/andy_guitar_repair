@@ -1,7 +1,7 @@
 from base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 from aws import AWS_SECRET_ACCESS_KEY as AWS_KEY
