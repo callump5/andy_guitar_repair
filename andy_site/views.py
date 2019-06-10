@@ -208,7 +208,3 @@ def get_sitemap(request):
 def get_robots(request):
 
     return render(request, '.robots/robots.txt')
-
-def get_htaccess(request):
-
-    return render(request, '.htaccess/.htaccess')

@@ -12,6 +12,5 @@ urlpatterns = [
 
     url(r'.well-known/pki-validation/starfield.html', get_ssl),
     url(r'sitemap.xml', get_sitemap),
-    url(r'robots.txt', get_robots),
-    url(r'.htaccess', get_htaccess)
+    url(r'robots.txt', get_robots)
 ]
