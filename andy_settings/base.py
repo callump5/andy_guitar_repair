@@ -44,9 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'andy_site',
+    'django_hosts'
 ]
 
 MIDDLEWARE = [
+
+    'django_hosts.middleware.HostsRequestMiddleware'
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_hosts.middleware.HostsResponseMiddleware'
 
 ]
 
@@ -140,8 +144,8 @@ AWS_QUERYSTRING_AUTH = False     # don't add complex authentication-related quer
 AWS_STORAGE_BUCKET_NAME = 'action-guitar'
 
 CORS_REPLACE_HTTPS_REFERER      = True
-HOST_SCHEME                     = "https://www."
-SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
+HOST_SCHEME                     = "https://www"
+SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https://www')
 SECURE_SSL_REDIRECT             = True
 SESSION_COOKIE_SECURE           = True
 CSRF_COOKIE_SECURE              = True
@@ -158,3 +162,5 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
+
+ROOT_HOSTCONF = 'andy_site.hosts'
