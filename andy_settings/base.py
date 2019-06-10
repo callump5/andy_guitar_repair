@@ -140,7 +140,7 @@ AWS_QUERYSTRING_AUTH = False     # don't add complex authentication-related quer
 AWS_STORAGE_BUCKET_NAME = 'action-guitar'
 
 CORS_REPLACE_HTTPS_REFERER      = True
-HOST_SCHEME                     = "https://"
+HOST_SCHEME                     = "https://www."
 SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT             = True
 SESSION_COOKIE_SECURE           = True
