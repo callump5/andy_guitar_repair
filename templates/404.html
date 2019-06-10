@@ -7,13 +7,15 @@
     {% block index %}
 
 
-    {% include 'base/header.html' %}
+        {% include 'base/header.html' %}
+
+        {% include 'home/landing.html' %}
 
         <div id="not-found">
             <h1 class="title">Sorry, This page you are looking for can not be found! </h1>
         </div>
 
 
-    {% include 'base/footer.html' %}
+        {% include 'base/footer.html' %}
 
     {% endblock %}
