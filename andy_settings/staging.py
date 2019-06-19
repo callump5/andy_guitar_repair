@@ -41,3 +41,5 @@ CSRF_COOKIE_SECURE              = True
 SECURE_HSTS_SECONDS             = None
 SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
 SECURE_FRAME_DENY               = False
+
+PREPEND_WWW = True
